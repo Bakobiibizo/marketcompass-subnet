@@ -4,8 +4,7 @@ import datetime
 
 def iso_timestamp_now() -> str:
     now = datetime.datetime.now(tz=datetime.timezone.utc)
-    iso_now = now.isoformat()
-    return iso_now
+    return now.isoformat()
 
 
 def log(
@@ -17,7 +16,7 @@ def log(
     flush: Literal[False] = False,
 ):
     print(
-        f"[{iso_timestamp_now()}] " + msg,
+        f"[{iso_timestamp_now()}] {msg}",
         *values,
         sep=sep,
         end=end,
